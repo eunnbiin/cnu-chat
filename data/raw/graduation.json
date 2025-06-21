@@ -1,0 +1,416 @@
+{
+  "university": "충남대학교",
+  "academic_year": "2020",
+  "document_title": "졸업이수학점",
+  "colleges": [
+    {
+      "college_name": "인문대학",
+      "departments": [
+        {
+          "department_name": "국어국문학과",
+          "programs": [
+            {
+              "program_type": "단수전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 0,
+                "general": 19,
+                "subtotal": 36
+              },
+              "major": {
+                "foundation": 0,
+                "core": 39,
+                "advanced": 39,
+                "subtotal": 78
+              },
+              "general_elective": 16,
+              "total_graduation_credits": 130
+            },
+            {
+              "program_type": "복수전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 0,
+                "general": 19,
+                "subtotal": 36
+              },
+              "major": {
+                "foundation": 0,
+                "core": 39,
+                "advanced": 0,
+                "subtotal": 39
+              },
+              "general_elective": 55,
+              "total_graduation_credits": 130
+            },
+            {
+              "program_type": "부전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 0,
+                "general": 19,
+                "subtotal": 36
+              },
+              "major": {
+                "foundation": 0,
+                "core": 39,
+                "advanced": 15,
+                "subtotal": 54
+              },
+              "general_elective": 40,
+              "total_graduation_credits": 130
+            }
+          ]
+        },
+        {
+          "department_name": "영어영문학과",
+          "programs": [
+            {
+              "program_type": "단수전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 3,
+                "general": 16,
+                "subtotal": 36
+              },
+              "major": {
+                "foundation": 16,
+                "core": 23,
+                "advanced": 39,
+                "subtotal": 78
+              },
+              "general_elective": 16,
+              "total_graduation_credits": 130
+            },
+            {
+              "program_type": "복수전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 3,
+                "general": 16,
+                "subtotal": 36
+              },
+              "major": {
+                "foundation": 16,
+                "core": 23,
+                "advanced": 0,
+                "subtotal": 39
+              },
+              "general_elective": 55,
+              "total_graduation_credits": 130
+            },
+            {
+              "program_type": "부전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 3,
+                "general": 16,
+                "subtotal": 36
+              },
+              "major": {
+                "foundation": 16,
+                "core": 23,
+                "advanced": 15,
+                "subtotal": 54
+              },
+              "general_elective": 40,
+              "total_graduation_credits": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "college_name": "사회과학대학",
+      "departments": [
+        {
+          "department_name": "사회학과",
+          "programs": [
+            {
+              "program_type": "단수전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 0,
+                "general": 19,
+                "subtotal": 36
+              },
+              "major": {
+                "foundation": 18,
+                "core": 21,
+                "advanced": 39,
+                "subtotal": 78
+              },
+              "general_elective": 16,
+              "total_graduation_credits": 130
+            },
+            {
+              "program_type": "교직단수전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 0,
+                "general": 10,
+                "subtotal": 27
+              },
+              "major": {
+                "foundation": 18,
+                "core": 21,
+                "advanced": 45,
+                "subtotal": 84
+              },
+              "general_elective": 29,
+              "total_graduation_credits": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "college_name": "자연과학대학",
+      "departments": [
+        {
+          "department_name": "수학과",
+          "programs": [
+            {
+              "program_type": "교직단수전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 0,
+                "general": 7,
+                "subtotal": 24
+              },
+              "major": {
+                "foundation": 0,
+                "core": 39,
+                "advanced": 45,
+                "subtotal": 84
+              },
+              "general_elective": 32,
+              "total_graduation_credits": 140
+            },
+            {
+              "program_type": "단수전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 0,
+                "general": 19,
+                "subtotal": 36
+              },
+              "major": {
+                "foundation": 18,
+                "core": 27,
+                "advanced": 39,
+                "subtotal": 84
+              },
+              "general_elective": 10,
+              "total_graduation_credits": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "college_name": "공과대학",
+      "departments": [
+        {
+          "department_name": "건축학과",
+          "programs": [
+            {
+              "program_type": "단수전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 0,
+                "general": 19,
+                "subtotal": 36
+              },
+              "major": {
+                "foundation": 0,
+                "core": 114,
+                "advanced": 15,
+                "subtotal": 129
+              },
+              "general_elective": 1,
+              "total_graduation_credits": 166
+            },
+            {
+              "program_type": "심화단수전공자",
+              "liberal_arts": {
+                "basic_foundation": 8,
+                "core": 9,
+                "specialized_foundation": 18,
+                "general": 1,
+                "subtotal": 36
+              },
+              "major": {
+                "foundation": 17,
+                "core": 24,
+                "advanced": 39,
+                "subtotal": 80
+              },
+              "general_elective": 14,
+              "total_graduation_credits": 130
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "interdisciplinary_programs": [
+    {
+      "program_name": "목조건축및인테리어디자인",
+      "degree": "공학사",
+      "program_types": {
+        "복수전공": {
+          "foundation": 0,
+          "core": 39,
+          "advanced": 0,
+          "subtotal": 39
+        },
+        "부전공": {
+          "foundation": 0,
+          "core": 24,
+          "advanced": 0,
+          "subtotal": 24
+        }
+      }
+    },
+    {
+      "program_name": "중국통상",
+      "degree": "지역학사",
+      "program_types": {
+        "복수전공": {
+          "foundation": 0,
+          "core": 39,
+          "advanced": 0,
+          "subtotal": 39
+        },
+        "부전공": {
+          "foundation": 0,
+          "core": 24,
+          "advanced": 0,
+          "subtotal": 24
+        }
+      }
+    },
+    {
+      "program_name": "국제학",
+      "degree": "국제학사",
+      "program_types": {
+        "복수전공": {
+          "foundation": 0,
+          "core": 39,
+          "advanced": 0,
+          "subtotal": 39
+        },
+        "부전공": {
+          "foundation": 0,
+          "core": 24,
+          "advanced": 0,
+          "subtotal": 24
+        }
+      }
+    }
+  ],
+  "self_designed_programs": [
+    {
+      "program_name": "스포츠심리상담전공",
+      "degree": "스포츠심리상담학사",
+      "applicable_year": "2015학년도 이후",
+      "체육계열": {
+        "복수전공": {
+          "foundation": 6,
+          "core": 21,
+          "advanced": 12,
+          "subtotal": 39
+        },
+        "부전공": {
+          "foundation": 9,
+          "core": 0,
+          "advanced": 0,
+          "subtotal": 24
+        }
+      },
+      "비체육계열": {
+        "복수전공": {
+          "foundation": 12,
+          "core": 15,
+          "advanced": 12,
+          "subtotal": 39
+        },
+        "부전공": {
+          "foundation": 6,
+          "core": 9,
+          "advanced": 9,
+          "subtotal": 24
+        }
+      }
+    },
+    {
+      "program_name": "고전문화창의전공",
+      "degree": "문학사",
+      "applicable_year": "2015학년도 이후",
+      "programs": {
+        "복수전공": {
+          "foundation": 0,
+          "core": 39,
+          "advanced": 0,
+          "subtotal": 39
+        },
+        "부전공": {
+          "foundation": 0,
+          "core": 24,
+          "advanced": 0,
+          "subtotal": 24
+        }
+      }
+    }
+  ],
+  "industry_convergence_programs": [
+    {
+      "program_name": "에너지공학전공",
+      "degree": "공학사",
+      "applicable_year_2015_after": {
+        "복수전공": {
+          "foundation": 0,
+          "core": 39,
+          "advanced": 0,
+          "subtotal": 39
+        },
+        "부전공": {
+          "foundation": 0,
+          "core": 24,
+          "advanced": 0,
+          "subtotal": 24
+        }
+      },
+      "applicable_year_2014_before": {
+        "복수전공": {
+          "required": 0,
+          "elective": 48,
+          "subtotal": 48
+        },
+        "부전공": {
+          "required": 0,
+          "elective": 30,
+          "subtotal": 30
+        }
+      }
+    }
+  ],
+  "notes": [
+    "교직설치학과의 교직이수자 및 사범대학 소속학생은 교직과목 23학점을 반드시 이수하여야 함",
+    "일반선택과목: 교양과목과 당해 학과의 전공과목을 제외한 모든 과목",
+    "부전공 이수자는 주전공 이수학점 54학점 이상, 부전공 이수학점은 부전공학과의 전공 24학점 이상을 이수하여야 함",
+    "복수전공 이수자 중 공과대학의 학과(전공)를 복수전공하고자 하는 자는 학과(전공)와 반드시 학점 및 공학교육인증제에 대하여 상담한 후 복수전공 여부를 선택하여야 한다"
+  ]
+}

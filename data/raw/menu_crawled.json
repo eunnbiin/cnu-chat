@@ -1,0 +1,272 @@
+[
+  {
+    "date": "2025-06-20",
+    "restaurants": {
+      "제1학생회관": {
+        "name": "제1학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "제2학생회관": {
+        "name": "제2학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "제3학생회관": {
+        "name": "제3학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "제4학생회관": {
+        "name": "제4학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "생활과학대학": {
+        "name": "생활과학대학",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "2025-06-21",
+    "restaurants": {
+      "제1학생회관": {
+        "name": "제1학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "제2학생회관": {
+        "name": "제2학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "제3학생회관": {
+        "name": "제3학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "제4학생회관": {
+        "name": "제4학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "생활과학대학": {
+        "name": "생활과학대학",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      }
+    }
+  },
+  {
+    "date": "2025-06-22",
+    "restaurants": {
+      "제1학생회관": {
+        "name": "제1학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "제2학생회관": {
+        "name": "제2학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "제3학생회관": {
+        "name": "제3학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "제4학생회관": {
+        "name": "제4학생회관",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      },
+      "생활과학대학": {
+        "name": "생활과학대학",
+        "meals": {
+          "조식": {
+            "items": [],
+            "available": false
+          },
+          "중식": {
+            "items": [],
+            "available": false
+          },
+          "석식": {
+            "items": [],
+            "available": false
+          }
+        }
+      }
+    }
+  }
+]
