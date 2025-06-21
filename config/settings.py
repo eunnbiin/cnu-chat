@@ -32,7 +32,7 @@ CATEGORY_NAMES = {
 }
 
 # 모델 설정
-CHATBOT_MODEL_NAME = "Qwen/Qwen3-8B-AWQ"  # 답변 생성용 14B AWQ 양자화 모델
+CHATBOT_MODEL_NAME = "Qwen/Qwen3-8B-AWQ"  
 EMBEDDING_MODEL_NAME = "Qwen/Qwen3-Embedding-0.6B"  # 임베딩 모델
 RERANKER_MODEL_NAME = "Qwen/Qwen3-Reranker-0.6B"  # 리랭커 모델
 

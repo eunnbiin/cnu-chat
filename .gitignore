@@ -53,16 +53,9 @@ models/
 data/vector_db/
 *.sqlite3
 
-# Logs
-*.log
-logs/
-server.log
-gradio.log
-nohup.out
 
-# Outputs
-outputs/
-temp/
+
+
 
 # OS
 .DS_Store

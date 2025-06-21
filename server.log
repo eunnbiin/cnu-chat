@@ -1,0 +1,564 @@
+INFO:     Will watch for changes in these directories: ['/content/drive/MyDrive/chat_proj']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [3495] using WatchFiles
+🚀 충남대학교 챗봇 API 서버 시작...
+📁 프로젝트 경로: /content/drive/MyDrive/chat_proj
+🌐 서버 주소: http://0.0.0.0:8000
+📚 API 문서: http://0.0.0.0:8000/docs
+--------------------------------------------------
+INFO:     Started server process [3519]
+INFO:     Waiting for application startup.
+INFO:src.api.main:충남대 챗봇 API 서버 시작...
+INFO:src.api.main:Chroma Vector Store 초기화 중...
+INFO:src.database.chroma_vector_store:✅ Chroma 클라이언트 초기화 완료
+INFO:src.database.chroma_vector_store:임베딩 모델 로딩: Qwen/Qwen3-Embedding-0.6B
+2025-06-21 07:44:17.124862: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1750491857.425431    3519 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1750491857.510201    3519 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-06-21 07:44:18.157047: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:src.database.chroma_vector_store:리랭커 모델 로딩: Qwen/Qwen3-Reranker-0.6B
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:src.database.chroma_vector_store:✅ 임베딩 및 리랭커 모델 로드 완료
+INFO:src.database.chroma_vector_store:Chroma Vector Store 초기화: /content/drive/MyDrive/chat_proj/data/vector_db
+INFO:src.api.main:데이터 파일 로딩 중...
+ERROR:src.api.main:graduation.json 로드 실패: 'str' object has no attribute 'get'
+INFO:src.api.main:schedule.jsonl: 1건 로드 (academic_calendar)
+INFO:src.api.main:menu.json: 1건 로드 (meal_guide)
+INFO:src.api.main:menu_time.json: 1건 추가 로드 (meal_guide, 총 2건)
+INFO:src.api.main:shuttle.json: 2건 로드 (transportation)
+INFO:src.api.main:academic_calendar 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: academic_calendar_collection
+INFO:src.database.chroma_vector_store:academic_calendar_collection에 이미 70개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:academic_calendar: 1건 벡터화 완료
+INFO:src.api.main:meal_guide 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: meal_guide_collection
+INFO:src.database.chroma_vector_store:meal_guide_collection에 이미 6개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:meal_guide: 2건 벡터화 완료
+INFO:src.api.main:transportation 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: transportation_collection
+INFO:src.database.chroma_vector_store:transportation_collection에 이미 2개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:transportation: 2건 벡터화 완료
+INFO:src.api.main:모든 데이터 벡터화 완료
+INFO:src.api.main:CNU Chat RAG 시스템 초기화 중...
+INFO:src.core.classifier:Loading classification model from /content/drive/MyDrive/chat_proj/models/fine-tuned-qwen3-0_6b
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+/usr/local/lib/python3.11/dist-packages/awq/__init__.py:21: DeprecationWarning: 
+I have left this message as the final dev message to help you transition.
+
+Important Notice:
+- AutoAWQ is officially deprecated and will no longer be maintained.
+- The last tested configuration used Torch 2.6.0 and Transformers 4.51.3.
+- If future versions of Transformers break AutoAWQ compatibility, please report the issue to the Transformers project.
+
+Alternative:
+- AutoAWQ has been adopted by the vLLM Project: https://github.com/vllm-project/llm-compressor
+
+For further inquiries, feel free to reach out:
+- X: https://x.com/casper_hansen_
+- LinkedIn: https://www.linkedin.com/in/casper-hansen-804005170/
+
+  warnings.warn(_FINAL_DEV_MESSAGE, category=DeprecationWarning, stacklevel=1)
+INFO:datasets:PyTorch version 2.6.0+cu124 available.
+INFO:datasets:Polars version 1.21.0 available.
+INFO:datasets:Duckdb version 1.2.2 available.
+INFO:datasets:TensorFlow version 2.18.0 available.
+INFO:datasets:JAX version 0.5.2 available.
+INFO:src.core.classifier:Classification model loaded successfully
+INFO:src.api.main:AWQ 모델 로딩: Qwen/Qwen3-14B-AWQ
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]WARNING:  WatchFiles detected changes in 'config/settings.py'. Reloading...
+
+Fetching 2 files:  50%|█████     | 1/2 [11:41<11:41, 701.33s/it]
+Fetching 2 files: 100%|██████████| 2/2 [11:41<00:00, 350.67s/it]
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:23<00:23, 23.65s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:47<00:00, 23.92s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:47<00:00, 23.88s/it]
+INFO:src.api.main:AWQ 모델 로드 완료
+INFO:src.api.main:RAG System 초기화 완료
+INFO:src.api.main:실시간 학식 크롤러 시작...
+INFO:src.crawler.cnu_food_crawler:실시간 학식 업데이트 스케줄러 시작
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 시작
+INFO:src.crawler.cnu_food_crawler:2025-06-21 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-21
+INFO:src.crawler.cnu_food_crawler:2025-06-22 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-22
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 완료
+INFO:src.api.main:서버 초기화 완료!
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'config/settings.py'. Reloading...
+INFO:     Started server process [7891]
+INFO:     Waiting for application startup.
+INFO:src.api.main:충남대 챗봇 API 서버 시작...
+INFO:src.api.main:Chroma Vector Store 초기화 중...
+INFO:src.database.chroma_vector_store:✅ Chroma 클라이언트 초기화 완료
+INFO:src.database.chroma_vector_store:임베딩 모델 로딩: Qwen/Qwen3-Embedding-0.6B
+2025-06-21 07:57:47.849910: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1750492667.979255    7891 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1750492667.992213    7891 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-06-21 07:57:48.622687: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:src.database.chroma_vector_store:리랭커 모델 로딩: Qwen/Qwen3-Reranker-0.6B
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:src.database.chroma_vector_store:✅ 임베딩 및 리랭커 모델 로드 완료
+INFO:src.database.chroma_vector_store:Chroma Vector Store 초기화: /content/drive/MyDrive/chat_proj/data/vector_db
+INFO:src.api.main:데이터 파일 로딩 중...
+ERROR:src.api.main:graduation.json 로드 실패: 'str' object has no attribute 'get'
+INFO:src.api.main:schedule.jsonl: 1건 로드 (academic_calendar)
+INFO:src.api.main:menu.json: 1건 로드 (meal_guide)
+INFO:src.api.main:menu_time.json: 1건 추가 로드 (meal_guide, 총 2건)
+INFO:src.api.main:shuttle.json: 2건 로드 (transportation)
+INFO:src.api.main:academic_calendar 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: academic_calendar_collection
+INFO:src.database.chroma_vector_store:academic_calendar_collection에 이미 70개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:academic_calendar: 1건 벡터화 완료
+INFO:src.api.main:meal_guide 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: meal_guide_collection
+INFO:src.database.chroma_vector_store:meal_guide_collection에 이미 6개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:meal_guide: 2건 벡터화 완료
+INFO:src.api.main:transportation 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: transportation_collection
+INFO:src.database.chroma_vector_store:transportation_collection에 이미 2개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:transportation: 2건 벡터화 완료
+INFO:src.api.main:모든 데이터 벡터화 완료
+INFO:src.api.main:CNU Chat RAG 시스템 초기화 중...
+INFO:src.core.classifier:Loading classification model from /content/drive/MyDrive/chat_proj/models/fine-tuned-qwen3-0_6b
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+/usr/local/lib/python3.11/dist-packages/awq/__init__.py:21: DeprecationWarning: 
+I have left this message as the final dev message to help you transition.
+
+Important Notice:
+- AutoAWQ is officially deprecated and will no longer be maintained.
+- The last tested configuration used Torch 2.6.0 and Transformers 4.51.3.
+- If future versions of Transformers break AutoAWQ compatibility, please report the issue to the Transformers project.
+
+Alternative:
+- AutoAWQ has been adopted by the vLLM Project: https://github.com/vllm-project/llm-compressor
+
+For further inquiries, feel free to reach out:
+- X: https://x.com/casper_hansen_
+- LinkedIn: https://www.linkedin.com/in/casper-hansen-804005170/
+
+  warnings.warn(_FINAL_DEV_MESSAGE, category=DeprecationWarning, stacklevel=1)
+INFO:datasets:PyTorch version 2.6.0+cu124 available.
+INFO:datasets:Polars version 1.21.0 available.
+INFO:datasets:Duckdb version 1.2.2 available.
+INFO:datasets:TensorFlow version 2.18.0 available.
+INFO:datasets:JAX version 0.5.2 available.
+INFO:src.core.classifier:Classification model loaded successfully
+INFO:src.api.main:AWQ 모델 로딩: Qwen/Qwen3-8B-AWQ
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Fetching 2 files:  50%|█████     | 1/2 [02:18<02:18, 138.37s/it]
+Fetching 2 files: 100%|██████████| 2/2 [02:18<00:00, 69.19s/it] 
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:21<00:21, 21.68s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 12.62s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:27<00:00, 13.98s/it]
+INFO:src.api.main:AWQ 모델 로드 완료
+INFO:src.api.main:RAG System 초기화 완료
+INFO:src.api.main:실시간 학식 크롤러 시작...
+INFO:src.crawler.cnu_food_crawler:실시간 학식 업데이트 스케줄러 시작
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 시작
+INFO:src.crawler.cnu_food_crawler:2025-06-21 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-21
+INFO:src.crawler.cnu_food_crawler:2025-06-22 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-22
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 완료
+INFO:src.api.main:서버 초기화 완료!
+INFO:     Application startup complete.
+INFO:     127.0.0.1:45156 - "GET /health HTTP/1.1" 200 OK
+INFO:src.core.classifier:Question classified as category: 0
+You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/usr/local/lib/python3.11/dist-packages/transformers/tokenization_utils_base.py:2714: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+INFO:src.database.chroma_vector_store:리랭커로 8개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:graduation_requirements_collection에서 5개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:school_announcements_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:graduation_requirements_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 2개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:transportation_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:academic_calendar_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:meal_guide_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.api.main:Transformers 모델 생성 답변 길이: 512 문자
+INFO:src.api.main:정리된 답변: 인공지능학과 졸업을 위한 필수 과목은 다음과 같습니다.  
+
+### 📚 필수 이수 과목 및 개설 학년-학기  
+1. **어드벤처디자인** (1학년 2학기)  
+2. **기초프로젝트랩** (2학년 1학기, 2학년 2학기)  
+3. **심화프로젝트랩** (3학년 1학기, 3학년 2학기)  
+4. **종합설계1** (4학년 1학기)  
+5. **종합설계2** (...
+INFO:src.api.main:Qwen 모델 응답: 인공지능학과 졸업을 위한 필수 과목은 다음과 같습니다.  
+
+### 📚 필수 이수 과목 및 개설 학년-학기  
+1. **어드벤처디자인** (1학년 2학기)  
+2. **기초프로젝트...
+INFO:     127.0.0.1:56260 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46858 - "GET /health HTTP/1.1" 200 OK
+INFO:src.core.classifier:Question classified as category: 2
+/usr/local/lib/python3.11/dist-packages/transformers/tokenization_utils_base.py:2714: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+INFO:src.database.chroma_vector_store:리랭커로 10개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:academic_calendar_collection에서 5개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:school_announcements_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:graduation_requirements_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 2개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:transportation_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:academic_calendar_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:meal_guide_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.api.main:Transformers 모델 생성 답변 길이: 427 문자
+INFO:src.api.main:정리된 답변: 졸업 논문 제출 마감일은 학교 공지를 통해 확인해야 합니다. 최신 정보는 **2025년 3월 4일 기준** 공지된 내용에 따르면, 논문 제출일자는 **통합정보시스템**에서 확인할 수 있으며, 전산 처리되지 않은 경우 졸업 시점에 처리됩니다.  
+
+또한, **2024년 1월 7일**까지 졸업프로젝트 신청서를 제출해야 하는 사항도 있었으나, 현재는 2025년 ...
+INFO:src.api.main:Qwen 모델 응답: 졸업 논문 제출 마감일은 학교 공지를 통해 확인해야 합니다. 최신 정보는 **2025년 3월 4일 기준** 공지된 내용에 따르면, 논문 제출일자는 **통합정보시스템**에서 확인할 ...
+INFO:     127.0.0.1:35374 - "POST /chat HTTP/1.1" 200 OK
+INFO:src.core.classifier:Question classified as category: 2
+INFO:src.database.chroma_vector_store:리랭커로 10개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:academic_calendar_collection에서 5개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:school_announcements_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:graduation_requirements_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 2개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:transportation_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:academic_calendar_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+INFO:src.database.chroma_vector_store:리랭커로 4개 문서 재순위화 완료
+INFO:src.database.chroma_vector_store:meal_guide_collection에서 2개 문서 찾음 (Chroma + 리랭킹)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            WARNING:  WatchFiles detected changes in 'src/api/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:src.crawler.cnu_food_crawler:실시간 학식 업데이트 스케줄러 중지
+INFO:src.api.main:충남대 챗봇 API 서버 종료...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [7891]
+INFO:     Started server process [11532]
+INFO:     Waiting for application startup.
+INFO:src.api.main:충남대 챗봇 API 서버 시작...
+INFO:src.api.main:Chroma Vector Store 초기화 중...
+INFO:src.database.chroma_vector_store:✅ Chroma 클라이언트 초기화 완료
+INFO:src.database.chroma_vector_store:임베딩 모델 로딩: Qwen/Qwen3-Embedding-0.6B
+WARNING:  WatchFiles detected changes in 'src/api/main.py'. Reloading...
+2025-06-21 08:11:16.654902: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1750493476.702739   11532 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1750493476.716246   11532 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-06-21 08:11:16.765653: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:src.database.chroma_vector_store:리랭커 모델 로딩: Qwen/Qwen3-Reranker-0.6B
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:src.database.chroma_vector_store:✅ 임베딩 및 리랭커 모델 로드 완료
+INFO:src.database.chroma_vector_store:Chroma Vector Store 초기화: /content/drive/MyDrive/chat_proj/data/vector_db
+INFO:src.api.main:데이터 파일 로딩 중...
+ERROR:src.api.main:graduation.json 로드 실패: 'str' object has no attribute 'get'
+INFO:src.api.main:schedule.jsonl: 1건 로드 (academic_calendar)
+INFO:src.api.main:menu.json: 1건 로드 (meal_guide)
+INFO:src.api.main:menu_time.json: 1건 추가 로드 (meal_guide, 총 2건)
+INFO:src.api.main:shuttle.json: 2건 로드 (transportation)
+INFO:src.api.main:academic_calendar 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: academic_calendar_collection
+INFO:src.database.chroma_vector_store:academic_calendar_collection에 이미 70개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:academic_calendar: 1건 벡터화 완료
+INFO:src.api.main:meal_guide 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: meal_guide_collection
+INFO:src.database.chroma_vector_store:meal_guide_collection에 이미 6개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:meal_guide: 2건 벡터화 완료
+INFO:src.api.main:transportation 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: transportation_collection
+INFO:src.database.chroma_vector_store:transportation_collection에 이미 2개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:transportation: 2건 벡터화 완료
+INFO:src.api.main:모든 데이터 벡터화 완료
+INFO:src.api.main:CNU Chat RAG 시스템 초기화 중...
+INFO:src.core.classifier:Loading classification model from /content/drive/MyDrive/chat_proj/models/fine-tuned-qwen3-0_6b
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+/usr/local/lib/python3.11/dist-packages/awq/__init__.py:21: DeprecationWarning: 
+I have left this message as the final dev message to help you transition.
+
+Important Notice:
+- AutoAWQ is officially deprecated and will no longer be maintained.
+- The last tested configuration used Torch 2.6.0 and Transformers 4.51.3.
+- If future versions of Transformers break AutoAWQ compatibility, please report the issue to the Transformers project.
+
+Alternative:
+- AutoAWQ has been adopted by the vLLM Project: https://github.com/vllm-project/llm-compressor
+
+For further inquiries, feel free to reach out:
+- X: https://x.com/casper_hansen_
+- LinkedIn: https://www.linkedin.com/in/casper-hansen-804005170/
+
+  warnings.warn(_FINAL_DEV_MESSAGE, category=DeprecationWarning, stacklevel=1)
+INFO:datasets:PyTorch version 2.6.0+cu124 available.
+INFO:datasets:Polars version 1.21.0 available.
+INFO:datasets:Duckdb version 1.2.2 available.
+INFO:datasets:TensorFlow version 2.18.0 available.
+INFO:datasets:JAX version 0.5.2 available.
+INFO:src.core.classifier:Classification model loaded successfully
+INFO:src.api.main:AWQ 모델 로딩: Qwen/Qwen3-8B-AWQ
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:22<00:22, 22.50s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:28<00:00, 12.94s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:28<00:00, 14.37s/it]
+INFO:src.api.main:AWQ 모델 로드 완료
+INFO:src.api.main:RAG System 초기화 완료
+INFO:src.api.main:실시간 학식 크롤러 시작...
+INFO:src.crawler.cnu_food_crawler:실시간 학식 업데이트 스케줄러 시작
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 시작
+INFO:src.crawler.cnu_food_crawler:2025-06-21 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-21
+INFO:src.crawler.cnu_food_crawler:2025-06-22 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-22
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 완료
+INFO:src.api.main:서버 초기화 완료!
+INFO:     Application startup complete.
+INFO:     Started server process [11923]
+INFO:     Waiting for application startup.
+INFO:src.api.main:충남대 챗봇 API 서버 시작...
+INFO:src.api.main:Chroma Vector Store 초기화 중...
+INFO:src.database.chroma_vector_store:✅ Chroma 클라이언트 초기화 완료
+INFO:src.database.chroma_vector_store:임베딩 모델 로딩: Qwen/Qwen3-Embedding-0.6B
+2025-06-21 08:12:40.275051: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1750493560.309518   11923 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1750493560.318661   11923 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-06-21 08:12:40.357066: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:src.database.chroma_vector_store:리랭커 모델 로딩: Qwen/Qwen3-Reranker-0.6B
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:src.database.chroma_vector_store:✅ 임베딩 및 리랭커 모델 로드 완료
+INFO:src.database.chroma_vector_store:Chroma Vector Store 초기화: /content/drive/MyDrive/chat_proj/data/vector_db
+INFO:src.api.main:데이터 파일 로딩 중...
+ERROR:src.api.main:graduation.json 로드 실패: 'str' object has no attribute 'get'
+INFO:src.api.main:schedule.jsonl: 1건 로드 (academic_calendar)
+INFO:src.api.main:menu.json: 1건 로드 (meal_guide)
+INFO:src.api.main:menu_time.json: 1건 추가 로드 (meal_guide, 총 2건)
+INFO:src.api.main:shuttle.json: 2건 로드 (transportation)
+INFO:src.api.main:academic_calendar 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: academic_calendar_collection
+INFO:src.database.chroma_vector_store:academic_calendar_collection에 이미 70개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:academic_calendar: 1건 벡터화 완료
+INFO:src.api.main:meal_guide 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: meal_guide_collection
+INFO:src.database.chroma_vector_store:meal_guide_collection에 이미 6개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:meal_guide: 2건 벡터화 완료
+INFO:src.api.main:transportation 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: transportation_collection
+INFO:src.database.chroma_vector_store:transportation_collection에 이미 2개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:transportation: 2건 벡터화 완료
+INFO:src.api.main:모든 데이터 벡터화 완료
+INFO:src.api.main:CNU Chat RAG 시스템 초기화 중...
+INFO:src.core.classifier:Loading classification model from /content/drive/MyDrive/chat_proj/models/fine-tuned-qwen3-0_6b
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+/usr/local/lib/python3.11/dist-packages/awq/__init__.py:21: DeprecationWarning: 
+I have left this message as the final dev message to help you transition.
+
+Important Notice:
+- AutoAWQ is officially deprecated and will no longer be maintained.
+- The last tested configuration used Torch 2.6.0 and Transformers 4.51.3.
+- If future versions of Transformers break AutoAWQ compatibility, please report the issue to the Transformers project.
+
+Alternative:
+- AutoAWQ has been adopted by the vLLM Project: https://github.com/vllm-project/llm-compressor
+
+For further inquiries, feel free to reach out:
+- X: https://x.com/casper_hansen_
+- LinkedIn: https://www.linkedin.com/in/casper-hansen-804005170/
+
+  warnings.warn(_FINAL_DEV_MESSAGE, category=DeprecationWarning, stacklevel=1)
+INFO:datasets:PyTorch version 2.6.0+cu124 available.
+INFO:datasets:Polars version 1.21.0 available.
+INFO:datasets:Duckdb version 1.2.2 available.
+INFO:datasets:TensorFlow version 2.18.0 available.
+INFO:datasets:JAX version 0.5.2 available.
+INFO:src.core.classifier:Classification model loaded successfully
+INFO:src.api.main:AWQ 모델 로딩: Qwen/Qwen3-8B-AWQ
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:22<00:22, 22.15s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:28<00:00, 12.70s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:28<00:00, 14.11s/it]
+INFO:src.api.main:AWQ 모델 로드 완료
+INFO:src.api.main:RAG System 초기화 완료
+INFO:src.api.main:실시간 학식 크롤러 시작...
+INFO:src.crawler.cnu_food_crawler:실시간 학식 업데이트 스케줄러 시작
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 시작
+INFO:src.crawler.cnu_food_crawler:2025-06-21 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-21
+INFO:src.crawler.cnu_food_crawler:2025-06-22 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-22
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 완료
+INFO:src.api.main:서버 초기화 완료!
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'src/ui/gradio_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:src.crawler.cnu_food_crawler:실시간 학식 업데이트 스케줄러 중지
+INFO:src.api.main:충남대 챗봇 API 서버 종료...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [11923]
+INFO:     Started server process [13805]
+INFO:     Waiting for application startup.
+INFO:src.api.main:충남대 챗봇 API 서버 시작...
+INFO:src.api.main:Chroma Vector Store 초기화 중...
+INFO:src.database.chroma_vector_store:✅ Chroma 클라이언트 초기화 완료
+INFO:src.database.chroma_vector_store:임베딩 모델 로딩: Qwen/Qwen3-Embedding-0.6B
+2025-06-21 08:20:10.322296: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1750494010.355863   13805 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1750494010.365890   13805 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-06-21 08:20:10.406739: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+WARNING:  WatchFiles detected changes in 'src/ui/gradio_app.py'. Reloading...
+INFO:src.database.chroma_vector_store:리랭커 모델 로딩: Qwen/Qwen3-Reranker-0.6B
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:src.database.chroma_vector_store:✅ 임베딩 및 리랭커 모델 로드 완료
+INFO:src.database.chroma_vector_store:Chroma Vector Store 초기화: /content/drive/MyDrive/chat_proj/data/vector_db
+INFO:src.api.main:데이터 파일 로딩 중...
+ERROR:src.api.main:graduation.json 로드 실패: 'str' object has no attribute 'get'
+INFO:src.api.main:schedule.jsonl: 1건 로드 (academic_calendar)
+INFO:src.api.main:menu.json: 1건 로드 (meal_guide)
+INFO:src.api.main:menu_time.json: 1건 추가 로드 (meal_guide, 총 2건)
+INFO:src.api.main:shuttle.json: 2건 로드 (transportation)
+INFO:src.api.main:academic_calendar 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: academic_calendar_collection
+INFO:src.database.chroma_vector_store:academic_calendar_collection에 이미 70개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:academic_calendar: 1건 벡터화 완료
+INFO:src.api.main:meal_guide 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: meal_guide_collection
+INFO:src.database.chroma_vector_store:meal_guide_collection에 이미 6개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:meal_guide: 2건 벡터화 완료
+INFO:src.api.main:transportation 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: transportation_collection
+INFO:src.database.chroma_vector_store:transportation_collection에 이미 2개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:transportation: 2건 벡터화 완료
+INFO:src.api.main:모든 데이터 벡터화 완료
+INFO:src.api.main:CNU Chat RAG 시스템 초기화 중...
+INFO:src.core.classifier:Loading classification model from /content/drive/MyDrive/chat_proj/models/fine-tuned-qwen3-0_6b
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+/usr/local/lib/python3.11/dist-packages/awq/__init__.py:21: DeprecationWarning: 
+I have left this message as the final dev message to help you transition.
+
+Important Notice:
+- AutoAWQ is officially deprecated and will no longer be maintained.
+- The last tested configuration used Torch 2.6.0 and Transformers 4.51.3.
+- If future versions of Transformers break AutoAWQ compatibility, please report the issue to the Transformers project.
+
+Alternative:
+- AutoAWQ has been adopted by the vLLM Project: https://github.com/vllm-project/llm-compressor
+
+For further inquiries, feel free to reach out:
+- X: https://x.com/casper_hansen_
+- LinkedIn: https://www.linkedin.com/in/casper-hansen-804005170/
+
+  warnings.warn(_FINAL_DEV_MESSAGE, category=DeprecationWarning, stacklevel=1)
+INFO:datasets:PyTorch version 2.6.0+cu124 available.
+INFO:datasets:Polars version 1.21.0 available.
+INFO:datasets:Duckdb version 1.2.2 available.
+INFO:datasets:TensorFlow version 2.18.0 available.
+INFO:datasets:JAX version 0.5.2 available.
+INFO:src.core.classifier:Classification model loaded successfully
+INFO:src.api.main:AWQ 모델 로딩: Qwen/Qwen3-8B-AWQ
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:23<00:23, 23.16s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:29<00:00, 13.21s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:29<00:00, 14.71s/it]
+INFO:src.api.main:AWQ 모델 로드 완료
+INFO:src.api.main:RAG System 초기화 완료
+INFO:src.api.main:실시간 학식 크롤러 시작...
+INFO:src.crawler.cnu_food_crawler:실시간 학식 업데이트 스케줄러 시작
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 시작
+INFO:src.crawler.cnu_food_crawler:2025-06-21 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-21
+INFO:src.crawler.cnu_food_crawler:2025-06-22 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-22
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 완료
+INFO:src.api.main:서버 초기화 완료!
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'src/api/main.py'. Reloading...
+INFO:     Started server process [14192]
+INFO:     Waiting for application startup.
+INFO:src.api.main:충남대 챗봇 API 서버 시작...
+INFO:src.api.main:Chroma Vector Store 초기화 중...
+INFO:src.database.chroma_vector_store:✅ Chroma 클라이언트 초기화 완료
+INFO:src.database.chroma_vector_store:임베딩 모델 로딩: Qwen/Qwen3-Embedding-0.6B
+2025-06-21 08:21:31.581269: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1750494091.625358   14192 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1750494091.638299   14192 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-06-21 08:21:31.687194: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:src.database.chroma_vector_store:리랭커 모델 로딩: Qwen/Qwen3-Reranker-0.6B
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:src.database.chroma_vector_store:✅ 임베딩 및 리랭커 모델 로드 완료
+INFO:src.database.chroma_vector_store:Chroma Vector Store 초기화: /content/drive/MyDrive/chat_proj/data/vector_db
+INFO:src.api.main:데이터 파일 로딩 중...
+INFO:src.api.main:graduation.json: 1건 로드 (graduation_requirements)
+INFO:src.api.main:schedule.jsonl: 1건 로드 (academic_calendar)
+INFO:src.api.main:menu.json: 1건 로드 (meal_guide)
+INFO:src.api.main:menu_time.json: 1건 추가 로드 (meal_guide, 총 2건)
+INFO:src.api.main:shuttle.json: 2건 로드 (transportation)
+INFO:src.api.main:graduation_requirements 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: graduation_requirements_collection
+INFO:src.database.chroma_vector_store:graduation_requirements_collection에 이미 8개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:graduation_requirements: 1건 벡터화 완료
+INFO:src.api.main:academic_calendar 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: academic_calendar_collection
+INFO:src.database.chroma_vector_store:academic_calendar_collection에 이미 70개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:academic_calendar: 1건 벡터화 완료
+INFO:src.api.main:meal_guide 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: meal_guide_collection
+INFO:src.database.chroma_vector_store:meal_guide_collection에 이미 6개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:meal_guide: 2건 벡터화 완료
+INFO:src.api.main:transportation 벡터화 시작...
+INFO:src.database.chroma_vector_store:기존 컬렉션 로드: transportation_collection
+INFO:src.database.chroma_vector_store:transportation_collection에 이미 2개 문서가 있습니다. 추가를 건너뜁니다.
+INFO:src.api.main:transportation: 2건 벡터화 완료
+INFO:src.api.main:모든 데이터 벡터화 완료
+INFO:src.api.main:CNU Chat RAG 시스템 초기화 중...
+INFO:src.core.classifier:Loading classification model from /content/drive/MyDrive/chat_proj/models/fine-tuned-qwen3-0_6b
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+/usr/local/lib/python3.11/dist-packages/awq/__init__.py:21: DeprecationWarning: 
+I have left this message as the final dev message to help you transition.
+
+Important Notice:
+- AutoAWQ is officially deprecated and will no longer be maintained.
+- The last tested configuration used Torch 2.6.0 and Transformers 4.51.3.
+- If future versions of Transformers break AutoAWQ compatibility, please report the issue to the Transformers project.
+
+Alternative:
+- AutoAWQ has been adopted by the vLLM Project: https://github.com/vllm-project/llm-compressor
+
+For further inquiries, feel free to reach out:
+- X: https://x.com/casper_hansen_
+- LinkedIn: https://www.linkedin.com/in/casper-hansen-804005170/
+
+  warnings.warn(_FINAL_DEV_MESSAGE, category=DeprecationWarning, stacklevel=1)
+INFO:datasets:PyTorch version 2.6.0+cu124 available.
+INFO:datasets:Polars version 1.21.0 available.
+INFO:datasets:Duckdb version 1.2.2 available.
+INFO:datasets:TensorFlow version 2.18.0 available.
+INFO:datasets:JAX version 0.5.2 available.
+INFO:src.core.classifier:Classification model loaded successfully
+INFO:src.api.main:AWQ 모델 로딩: Qwen/Qwen3-8B-AWQ
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:23<00:23, 23.84s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:30<00:00, 13.91s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:30<00:00, 15.40s/it]
+INFO:src.api.main:AWQ 모델 로드 완료
+INFO:src.api.main:RAG System 초기화 완료
+INFO:src.api.main:실시간 학식 크롤러 시작...
+INFO:src.crawler.cnu_food_crawler:실시간 학식 업데이트 스케줄러 시작
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 시작
+INFO:src.crawler.cnu_food_crawler:2025-06-21 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-21
+INFO:src.crawler.cnu_food_crawler:2025-06-22 메뉴 파싱 완료: 5개 식당
+INFO:src.crawler.cnu_food_crawler:메뉴 데이터 저장 완료: 2025-06-22
+INFO:src.crawler.cnu_food_crawler:일일 메뉴 업데이트 완료
+INFO:src.api.main:서버 초기화 완료!
+INFO:     Application startup complete.

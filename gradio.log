@@ -1,0 +1,24 @@
+INFO:__main__:충남대학교 AI 챗봇 Gradio 인터페이스 시작...
+INFO:httpx:HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+ERROR:__main__:API 상태 확인 실패: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=5)
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/chat_proj/src/ui/gradio_app.py", line 302, in <module>
+    main()
+  File "/content/drive/MyDrive/chat_proj/src/ui/gradio_app.py", line 290, in main
+    demo.launch(
+  File "/usr/local/lib/python3.11/dist-packages/gradio/blocks.py", line 2724, in launch
+    ) = http_server.start_server(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/gradio/http_server.py", line 156, in start_server
+    raise OSError(
+OSError: Cannot find empty port in range: 7860-7860. You can specify a different port by setting the GRADIO_SERVER_PORT environment variable or passing the `server_port` parameter to `launch()`.
+🌐 충남대학교 AI 챗봇 Gradio 인터페이스 시작...
+📋 사전 요구사항:
+   1. API 서버가 실행 중이어야 합니다: uv run run_server.py
+   2. http://localhost:8000 에서 API가 작동해야 합니다
+   3. gradio 패키지가 설치되어 있어야 합니다: pip install gradio
+------------------------------------------------------------
+🚀 Gradio 웹 UI 시작 중...
+📁 앱 경로: /content/drive/MyDrive/chat_proj/src/ui/gradio_app.py
+🌐 웹 주소: http://localhost:7860
+------------------------------------------------------------
